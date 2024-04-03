@@ -21,6 +21,23 @@ chmod +x /home/pi/cloudflare_site_monitor/script.py
 ```
 
 
+### To Create Telegram Bot:
+Create a Bot: Talk to @BotFather on Telegram to create a new bot. Follow the instructions to get a token.
+Get Your Chat ID: Start a conversation with your new bot or add it to a group. Use a tool like https://api.telegram.org/bot<YourBOTToken>/getUpdates to find your chat ID.
+
+Make Sure you put your BotToken and chat id in env file.
+To create env file
+```
+sudo nano /home/pi/cloudflare_site_monitor/.env
+```
+
+And put following text:
+```
+TELEGRAM_TOKEN='your_bot_token'
+TELEGRAM_CHAT_ID='your_chat_id'
+```
+
+
 ### After this Create Systemd Service File
 Open a new service file in the /etc/systemd/system/ directory. You can name it something like cloudflare_monitor.service. Use sudo and your preferred text editor, for example:
 ```
