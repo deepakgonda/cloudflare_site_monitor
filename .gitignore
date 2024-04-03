@@ -1,0 +1,13 @@
+# Virtual environment directory
+venv/
+
+# Environment variables file
+*.env*
+
+
+# .bak File
+*.bak*
+
+
+# Log files
+*.log
