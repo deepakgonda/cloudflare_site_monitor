@@ -15,11 +15,6 @@ source venv/bin/activate
 pip install -r requirement.txt
 ```
 
-### Give correct permissions to script file
-```
-chmod +x /home/pi/cloudflare_site_monitor/script.py
-```
-
 
 ### To Create Telegram Bot:
 Create a Bot: Talk to @BotFather on Telegram to create a new bot. Follow the instructions to get a token.
@@ -36,6 +31,19 @@ And put following text:
 TELEGRAM_TOKEN='your_bot_token'
 TELEGRAM_CHAT_ID='your_chat_id'
 ```
+
+
+### Give correct permissions to script file
+```
+chmod +x /home/pi/cloudflare_site_monitor/script.py
+```
+
+
+### Validate Script, if all is ok
+```
+/home/pi/cloudflare_site_monitor/venv/bin/python3 /home/pi/cloudflare_site_monitor/script.py
+```
+
 
 
 ### After this Create Systemd Service File
@@ -96,7 +104,9 @@ chmod +x /home/pi/cloudflare_site_monitor/script.py
 ```
 
 Validate Script Execution Manually:
+```
 /home/pi/cloudflare_site_monitor/venv/bin/python3 /home/pi/cloudflare_site_monitor/script.py
+```
 
 Ensure Docker Command Can Be Run:
 Since your script restarts a Docker container, ensure that the pi user can execute Docker commands. Running Docker commands typically requires sudo, or the user needs to be in the docker group. If your script works when manually executed but fails when run as a service, this permissions issue could be the cause.
